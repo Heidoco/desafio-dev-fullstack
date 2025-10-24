@@ -32,7 +32,8 @@ Acesse:
 - API docs: `http://localhost:8000/docs`
 
 ### Instalação e execução local
-Os serviços podem ser iniciados localmente, para desenvolvimento ou testes:
+Os serviços podem ser iniciados localmente, para desenvolvimento ou testes.
+
 Back-end:
 
 ```shell
