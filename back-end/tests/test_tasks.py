@@ -8,6 +8,7 @@ from app.db.session import get_session
 
 @pytest.fixture
 def client():
+    # Criar um banco de dados em memória para testes
     test_engine = create_engine(
         "sqlite://",
         echo=False,
@@ -16,6 +17,7 @@ def client():
     )
     SQLModel.metadata.create_all(test_engine)
 
+    # Usar o banco de dados em memória
     def override_session():
         with Session(test_engine) as session:
             yield session

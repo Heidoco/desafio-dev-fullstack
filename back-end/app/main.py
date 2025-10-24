@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 from .db.session import create_db_and_tables
 from .routes import tasks
 
+# Garantir que o banco de dados seja criado antes de iniciar a aplicação
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     create_db_and_tables()

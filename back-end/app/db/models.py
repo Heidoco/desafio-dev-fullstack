@@ -15,3 +15,13 @@ class Task(SQLModel, table=True):
     status: TaskStatus = Field(default=TaskStatus.pendente)
     data_criacao: datetime = Field(default_factory=lambda: datetime.now(timezone.utc), nullable=False)
 
+
+class TaskCreate(SQLModel):
+    titulo: str
+    descricao: str
+
+
+class TaskUpdate(SQLModel):
+    titulo: str | None = None
+    descricao: str | None = None
+    status: TaskStatus | None = None
