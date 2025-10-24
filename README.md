@@ -6,7 +6,15 @@ Aplicação full stack para gerenciar tarefas com back-end em FastAPI e front-en
 - **Back-end**: FastAPI, SQLModel, SQLite
 - **Front-end**: React, Vite, Tailwind
 
-### Arquitetura e portas
+### Decisões técnicas
+- **FastAPI**: Simples para criar um CRUD e documentação automática (OpenAPI/Swagger).
+- **SQLModel**: Não conhecia, mas foi recomendado na documentação da FastAPI então achei uma boa oportunidade para testar.
+- **SQLite**: Banco simples e rápido de criar sem configurações complexas.
+- **Pytest**: Ferramenta popular de teste, documentação boa.
+- **React + Vite + Tailwind**: Vite para iniciar rapidamente um projeto, React por conta da documentação e experiência, Tailwind por praticidade e customização.
+- **Docker**: Ferramenta de containerização padrão.
+  
+### URLs
 - **API**: `http://localhost:8000`
 - **Documentação da API** `http://localhost:8000/docs`
 - **Front-end**: `http://localhost:5173`
@@ -52,14 +60,6 @@ cd back-end
 pytest -q
 ```
 
-### Decisões técnicas
-- **FastAPI**: Simples para criar um CRUD e documentação automática (OpenAPI/Swagger).
-- **SQLModel**: Não conhecia, mas foi recomendado na documentação da FastAPI então achei uma boa oportunidade para testar.
-- **SQLite**: Banco simples e rápido de criar sem configurações complexas.
-- **Pytest**: Ferramenta popular de teste, documentação boa.
-- **React + Vite + Tailwind**: Vite para iniciar rapidamente um projeto, React por conta da documentação e experiência, Tailwind por praticidade e customização.
-- **Docker**: Ferramenta de containerização padrão.
-
 ### Estrutura do repositório
 ```
 back-end/
@@ -79,4 +79,12 @@ front-end/
 ```
 
 ### Telas
+
+<img width="1914" height="919" alt="image" src="https://github.com/user-attachments/assets/138d1d4d-1542-4cdd-9cb2-fdf51472bfca" />
+
+<img width="1919" height="935" alt="image" src="https://github.com/user-attachments/assets/2d164e81-507d-4631-9a00-9efa85fdaced" />
+
+<img width="1872" height="940" alt="image" src="https://github.com/user-attachments/assets/607ba5e7-08a7-4327-9772-a16aa3fbb1b2" />
+
+
 
