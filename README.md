@@ -32,6 +32,7 @@ Acesse:
 - API docs: `http://localhost:8000/docs`
 
 ### Instalação e execução local
+Os serviços podem ser iniciados localmente, para desenvolvimento ou testes:
 Back-end:
 
 ```shell
@@ -39,11 +40,7 @@ cd back-end
 pip install -r requirements.txt
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
-Testes Back-end:
-```shell
-cd back-end
-pytest -q
-```
+
 Front-end:
 
 ```shell
@@ -52,10 +49,8 @@ npm ci
 npm run dev
 ```
 
-### Testes (back-end)
-Executar com Pytest:
-
-```powershell
+Testes Back-end:
+```shell
 cd back-end
 pytest -q
 ```
