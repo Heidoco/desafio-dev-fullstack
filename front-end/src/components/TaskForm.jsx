@@ -3,16 +3,22 @@ import React, { useEffect, useState } from "react"
 export default function TaskForm({ initialData, titleText, onSubmit, onCancel }) {
   const [title, setTitle] = useState(initialData?.title || "")
   const [description, setDescription] = useState(initialData?.description || "")
+  const [titleError, setTitleError] = useState("")
 
   useEffect(() => {
     setTitle(initialData?.title || "")
     setDescription(initialData?.description || "")
+    setTitleError("")
   }, [initialData])
 
   const handleSaveClick = () => {
     const t = title.trim()
     const d = description.trim()
-    if (!t) return
+    if (!t) {
+      setTitleError("É necessário informar um título")
+      return
+    }
+    setTitleError("")
     onSubmit({ title: t, description: d })
   }
 
@@ -22,11 +28,15 @@ export default function TaskForm({ initialData, titleText, onSubmit, onCancel })
       <div className="grid gap-3">
         <div className="grid gap-1.5">
           <input
-            className="w-full px-3 py-2.5 rounded-lg border border-slate-200 bg-white text-slate-900 text-[16px] focus:outline focus:outline-sky-300 placeholder:text-slate-400"
+            className={`w-full px-3 py-2.5 rounded-lg bg-white text-slate-900 text-[16px] focus:outline focus:outline-sky-300 placeholder:text-slate-400 ${titleError ? 'border border-red-500' : 'border border-slate-200'}`}
             placeholder="Título da tarefa"
             value={title}
-            onChange={e => setTitle(e.target.value)}
+            onChange={e => {
+              setTitle(e.target.value)
+              if (titleError) setTitleError("")
+            }}
           />
+          {titleError && <p className="text-red-600 text-sm m-0">{titleError}</p>}
         </div>
         <div className="grid gap-1.5">
           <textarea
